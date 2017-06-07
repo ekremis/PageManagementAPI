@@ -1,0 +1,57 @@
+<div id="list_pages_id" class="list_page_class" ng-controller="ListCtrl">
+
+  <h1 id="greeting"></h1>
+  
+  <div id="pages">
+  <button ng-click="GET_pages()">VIEW PAGES</button> 
+  <ul class="ulClass">
+    <li ng-repeat="page in scope_pages" class="li_class">
+      <!-- page basic info -->
+      <p> 
+        <span class="id">{{page.id}}</span>
+        <span class="title">{{page.title}}</span>
+        <span class="date spanx"><i>{{page.publishedOn}}</i></span>
+        <button ng-click="pageMore($index)" class="spanx">DETAILS</button>
+        <button ng-click="pageEdit($index)" class="spanx">EDIT</button>
+        <button ng-click="pageDelete(page.id)" class="spanx">DELETE</button>
+      </p>
+      
+      <!-- page's details (hide/show) -->
+      <p id="details{{$index}}" class="hideClass"> <!-- dynamic assign of ids according to iterator $index -->
+        <span class="description spanblock">Description: {{page.description}}</span>
+        <span class="type spanblock">Type: {{page.type}} </span> <span class="status spanblock">Active: {{page.isActive}}</span>
+        <button ng-click="pageLess($index)" class="">HIDE DETAILS</button>
+      </p>
+      
+      <!-- edit page (hide/show) -->
+      <div id="edit{{$index}}" class="hideClass">
+        <span>Title </span> <input type="text" ng-model="page.title" name="title{{$index}}" value="" id="title{{$index}}" class="" maxlength="50"/> 
+        <span class="spanx2">Description </span> <input type="text" ng-model="page.description" name="description{{$index}}" value="" id="description{{$index}}" class="" maxlength="200"/> 
+        <span class="spanx2">Type </span> <select ng-model="page.type"><option ng-repeat='value1 in [0, 1, 2]'>{{value1}}</option></select>
+        <span class="spanx2">Active </span> <select ng-model="page.isActive"><option ng-repeat='value2 in [true, false]'>{{value2}}</option></select>
+        <button ng-click="editOkay($index, page.id, page.title, page.description, page.type, page.isActive, page.publishedOn)" class="">UPDATE</button>
+        <button ng-click="editCancel($index)" class="">CANCEL</button>
+      </div>
+    </li>
+  </ul>
+  <!-- end of div#pages --></div>
+  
+  <button ng-click="expandAddPage()" class="margincls1">+ NEW PAGE</button><br />
+  
+  <!-- New page forms -->
+  <div id="newPage" class="hideClass margincls2">
+	<span>Id</span> <input type="text" ng-model="newPage.id" name="" value="" id="" class="inputClass1" size="2" /> 
+    <span>Title </span> <input type="text" ng-model="newPage.title" name="" value="" id="" class="" maxlength="50" /> 
+    <span>Description </span> <input type="text" ng-model="newPage.description" name="" value="" id="" class="" maxlength="200" /> 
+    <span>Type </span> <select ng-model="newPage.type"><option ng-repeat='value1 in [0, 1, 2]'>{{value1}}</option></select>
+    <span>Status </span> <select ng-model="newPage.isActive"><option ng-repeat='value2 in [true, false]'>{{value2}}</option></select>
+	<!-- 
+	{{newPage.id}} {{newPage.title}} {{newPage.description}} {{newPage.publishedOn}} <br />
+    Type: {{newPage.type}} Active status: {{newPage.isActive}} <br />
+    -->
+    <button ng-click="AddPage()">ADD</button>
+    <button ng-click="CancelAddPage()">CANCEL</button>
+  <!-- end of div#newPage --></div><br />
+</div>
+
+<a href="#/home">Home</a>

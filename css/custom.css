@@ -1,0 +1,76 @@
+html, input, select, button { font-family: 'Josefin Sans', sans-serif;}
+	
+input, select { color:#666;}
+	
+select { text-align:center;}
+
+button { font-size:10px;}
+
+.margincls1 { margin-left: 40px;}
+
+.margincls2 { margin-left: 40px; margin-top:5px;}
+
+.inputClass1 { text-align:center;}
+
+.delete {
+	background-color:#C30;
+	padding:2px;
+	color:#000;}
+
+.title {
+	width: 250px;
+	display:inline-block;
+	font-weight:bold;
+	font-size:17px;
+	color:#8D8861;
+	letter-spacing:0.5px;
+	background-color:#E0DFB4;
+	padding: 0 5px 0 5px;}
+
+.id {
+	display:inline-block;
+	width: 30px;
+	text-align: center;
+	background-color:#C9C9C9;
+	color:#FFF;
+	padding:2px;}
+
+.date {
+	width: 190px;
+	display:inline-block;
+	font-size: 11px;
+	color: #BCBCBC;}
+
+.description {
+	display:inline-block;
+	background-color:#E1DFC6;
+	color:#FFF;
+	padding:2px;}
+
+.type {
+	background-color:#E1DFC6;
+	color:#FFF;
+	padding:2px;}
+
+.status {
+	background-color:#E1DFC6;
+	color:#FFF;
+	padding:2px;}
+	
+.spanblock { display:block; margin-top:1px;}
+	
+.spanx {
+	margin-left:2px;}
+	
+.spanx2 {
+	margin-left:5px;}
+
+.ulClass {
+	list-style-type: none;}
+
+.li_class {
+	background-color:#F5F5F5;}
+	
+.hideClass {
+	display:none;}
+	
